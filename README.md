@@ -136,6 +136,7 @@ ENDIF.
 
 Certifique-se de substituir os nomes dos conjuntos ('ZSET_BASICO', 'ZSET_UNIDIMENSIONAL') pelos nomes que você deseja usar. Além disso, manipule os erros adequadamente com base nos requisitos de sua aplicação.
 
-### Fontes
-[Link 01]( https://blogs.sap.com/2013/08/16/using-sets-in-abap-program/)
-[Link 02]( https://easyabapforbeginners.wordpress.com/2017/10/25/working-with-sets-gs01gs02gs03/)
+### Fontes:
+- [Link 01](https://blogs.sap.com/2013/08/16/using-sets-in-abap-program/)
+- [Link 02](https://easyabapforbeginners.wordpress.com/2017/10/25/working-with-sets-gs01gs02gs03/)
+
