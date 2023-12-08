@@ -29,6 +29,7 @@ Vamos considerar um exemplo em que você tem configurações específicas do usu
 
 Lembre-se de que a escolha de usar conjuntos dependerá das necessidades específicas do seu sistema e do design da aplicação. Eles são particularmente úteis quando você tem um conjunto estável de valores associados a um contexto específico.
 
+### Código de transação importante para conjuntos:
 Os códigos de transação que você forneceu estão relacionados aos conjuntos no SAP e fazem parte da SAP Global Set Management, utilizados para gerenciar conjuntos. Aqui está uma breve descrição de cada um em português:
 
 1. **GS01 - Criar Conjunto:**
