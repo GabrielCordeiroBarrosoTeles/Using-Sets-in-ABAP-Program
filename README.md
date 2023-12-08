@@ -33,15 +33,24 @@ Lembre-se de que a escolha de usar conjuntos dependerá das necessidades especí
 Os códigos de transação que você forneceu estão relacionados aos conjuntos no SAP e fazem parte da SAP Global Set Management, utilizados para gerenciar conjuntos. Aqui está uma breve descrição de cada um em português:
 
 1. **GS01 - Criar Conjunto:**
-   - Código de transação para criar um novo conjunto. Você utiliza este código para definir um novo conjunto e adicionar valores a ele.
+   - **Descrição:** Utilizado para criar um novo conjunto no SAP Global Set Management.
+   - **Finalidade:** Ao executar o GS01, você pode definir um novo conjunto e adicionar valores a ele. Este é o ponto de partida para criar uma estrutura de conjunto que pode ser utilizada em várias partes do sistema SAP.
 
-2. **GS02 - Alterar Conjunto:**
-   - Código de transação para modificar um conjunto existente. Você pode utilizá-lo para adicionar, remover ou atualizar valores em um conjunto.
+2. **GS02 - Modificar Conjunto:**
+   - **Descrição:** Usado para modificar um conjunto existente.
+   - **Finalidade:** Após a criação de um conjunto usando o GS01, você pode precisar fazer alterações ao longo do tempo. O GS02 permite adicionar, remover ou modificar valores dentro do conjunto, ajustando-o conforme necessário.
 
 3. **GS03 - Exibir Conjunto:**
-   - Código de transação para exibir os detalhes de um conjunto.
-   - 
-Aqui estão os exemplos em português, com comentários explicativos:
+   - **Descrição:** Utilizado para exibir detalhes de um conjunto.
+   - **Finalidade:** Com o GS03, você pode visualizar as configurações e os valores associados a um conjunto específico. Isso é útil para revisar as informações do conjunto antes de fazer qualquer modificação ou exclusão.
+
+4. **GS04 - Excluir Conjunto:**
+   - **Descrição:** Não é um código de transação padrão para excluir conjuntos. Normalmente, a exclusão de conjuntos é realizada durante a exibição do conjunto (GS03), onde você pode encontrar opções para excluir o conjunto selecionado.
+   - **Finalidade:** Para remover permanentemente um conjunto do sistema. Isso é feito com cuidado, pois a exclusão de conjuntos pode impactar as áreas que dependem desses conjuntos.
+
+Lembre-se de que a disponibilidade e o comportamento específico desses códigos de transação podem variar dependendo da versão e configuração do sistema SAP, bem como das autorizações do usuário. Sempre siga as práticas de segurança e as políticas específicas da sua organização ao manipular conjuntos no SAP.
+
+Aqui estão os exemplos, com comentários explicativos:
 
 ### Criando um Conjunto Básico:
 
