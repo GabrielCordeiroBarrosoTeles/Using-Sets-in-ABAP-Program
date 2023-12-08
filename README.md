@@ -1,88 +1,96 @@
 # Using Sets in ABAP Program
 
-In ABAP, a set is a logical grouping of values. Here's an example of how you can create a basic set and a unidimensional set, and also how to delete a set.
+Aqui estão os exemplos em português, com comentários explicativos:
 
-### Creating a Basic Set:
+### Criando um Conjunto Básico:
 
-A basic set is a simple collection of values. In the example below, we'll create a basic set and add values to it.
+Um conjunto básico é uma simples coleção de valores. No exemplo abaixo, vamos criar um conjunto básico e adicionar valores a ele.
 
 ```ABAP
-DATA: basic_set TYPE TABLE OF rgsb4,
-      set_name TYPE rgsb4-setname,
-      value    TYPE rgsb4-value.
+DATA: conjunto_basico TYPE TABLE OF rgsb4,
+      nome_conjunto   TYPE rgsb4-setname,
+      valor           TYPE rgsb4-value.
 
-set_name = 'ZSET_BASIC'.
+" Defina o nome do conjunto básico
+nome_conjunto = 'ZSET_BASICO'.
 
-value = 'VALUE1'.
-APPEND VALUE #( setname = set_name value = value ) TO basic_set.
+" Adicione valores ao conjunto
+valor = 'VALOR1'.
+APPEND VALUE #( setname = nome_conjunto value = valor ) TO conjunto_basico.
 
-value = 'VALUE2'.
-APPEND VALUE #( setname = set_name value = value ) TO basic_set.
+valor = 'VALOR2'.
+APPEND VALUE #( setname = nome_conjunto value = valor ) TO conjunto_basico.
 
+" Chame a função para inserir o conjunto
 CALL FUNCTION 'S_SET_INSERT'
   EXPORTING
-    setname = set_name
+    setname = nome_conjunto
   TABLES
-    values  = basic_set.
+    values  = conjunto_basico.
 
 IF sy-subrc = 0.
-  WRITE: / 'Basic Set created successfully.'.
+  WRITE: / 'Conjunto Básico criado com sucesso.'.
 ELSE.
-  WRITE: / 'Error creating Basic Set.'.
+  WRITE: / 'Erro ao criar Conjunto Básico.'.
 ENDIF.
 ```
 
-### Creating a Unidimensional Set:
+### Criando um Conjunto Unidimensional:
 
-A unidimensional set is similar to a basic set, but it can have multiple values for each entry.
+Um conjunto unidimensional é semelhante a um conjunto básico, mas pode ter múltiplos valores para cada entrada.
 
 ```ABAP
-DATA: unidimensional_set TYPE TABLE OF rgsb4,
-      set_name           TYPE rgsb4-setname,
-      value              TYPE rgsb4-value,
-      id                 TYPE rgsb4-id.
+DATA: conjunto_unidimensional TYPE TABLE OF rgsb4,
+      nome_conjunto_uni      TYPE rgsb4-setname,
+      valor                   TYPE rgsb4-value,
+      identificador           TYPE rgsb4-id.
 
-set_name = 'ZSET_UNIDIMENSIONAL'.
+" Defina o nome do conjunto unidimensional
+nome_conjunto_uni = 'ZSET_UNIDIMENSIONAL'.
 
-value = 'VALUE1'.
-id = 'ID1'.
-APPEND VALUE #( setname = set_name id = id value = value ) TO unidimensional_set.
+" Adicione valores ao conjunto unidimensional
+valor = 'VALOR1'.
+identificador = 'ID1'.
+APPEND VALUE #( setname = nome_conjunto_uni id = identificador value = valor ) TO conjunto_unidimensional.
 
-value = 'VALUE2'.
-id = 'ID2'.
-APPEND VALUE #( setname = set_name id = id value = value ) TO unidimensional_set.
+valor = 'VALOR2'.
+identificador = 'ID2'.
+APPEND VALUE #( setname = nome_conjunto_uni id = identificador value = valor ) TO conjunto_unidimensional.
 
+" Chame a função para inserir o conjunto unidimensional
 CALL FUNCTION 'S_SET_INSERT'
   EXPORTING
-    setname = set_name
+    setname = nome_conjunto_uni
   TABLES
-    values  = unidimensional_set.
+    values  = conjunto_unidimensional.
 
 IF sy-subrc = 0.
-  WRITE: / 'Unidimensional Set created successfully.'.
+  WRITE: / 'Conjunto Unidimensional criado com sucesso.'.
 ELSE.
-  WRITE: / 'Error creating Unidimensional Set.'.
+  WRITE: / 'Erro ao criar Conjunto Unidimensional.'.
 ENDIF.
 ```
 
-### Deleting a Set:
+### Excluindo um Conjunto:
 
-To delete a set, you can use the `S_SET_DELETE` function module.
+Para excluir um conjunto, você pode usar o módulo de função `S_SET_DELETE`.
 
 ```ABAP
-DATA: set_name TYPE rgsb4-setname.
+DATA: nome_conjunto TYPE rgsb4-setname.
 
-set_name = 'ZSET_BASIC'. "Replace with your set name.
+" Defina o nome do conjunto a ser excluído
+nome_conjunto = 'ZSET_BASICO'. "Substitua pelo nome do seu conjunto.
 
+" Chame a função para excluir o conjunto
 CALL FUNCTION 'S_SET_DELETE'
   EXPORTING
-    setname = set_name.
+    setname = nome_conjunto.
 
 IF sy-subrc = 0.
-  WRITE: / 'Set deleted successfully.'.
+  WRITE: / 'Conjunto excluído com sucesso.'.
 ELSE.
-  WRITE: / 'Error deleting set.'.
+  WRITE: / 'Erro ao excluir o conjunto.'.
 ENDIF.
 ```
 
-Make sure to replace the set names ('ZSET_BASIC', 'ZSET_UNIDIMENSIONAL') with the names you want to use. Also, handle errors appropriately based on your application's requirements.
+Certifique-se de substituir os nomes dos conjuntos ('ZSET_BASICO', 'ZSET_UNIDIMENSIONAL') pelos nomes que você deseja usar. Além disso, manipule os erros adequadamente com base nos requisitos de sua aplicação.
